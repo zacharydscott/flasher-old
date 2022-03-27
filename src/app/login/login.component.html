@@ -1,0 +1,21 @@
+<h3>Log In</h3>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+	<mat-form-field class="example-full-width" appearance="fill">
+		<mat-label>Email</mat-label>
+		<input type="email" matInput formControlName="email"
+		placeholder="emailaddress@example.com">
+	</mat-form-field>
+	<mat-form-field class="example-full-width" appearance="fill">
+		<mat-label>Password</mat-label>
+		<input type="password" matInput formControlName="password"
+		>
+	</mat-form-field>
+		<div>
+			<div class="mb-2">
+				<mat-error *ngIf="failedLogin">Email or password is incorrect</mat-error>
+			</div>
+			<button [disabled]="!this.loginForm.valid" mat-raised-button type="submit" color="primary">Login</button>
+
+
+		</div>
+</form>
